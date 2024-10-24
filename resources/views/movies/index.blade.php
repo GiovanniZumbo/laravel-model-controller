@@ -1,13 +1,13 @@
 @extends('layout.app')
 
 @section('main-content')
-    <div class="container">
+    <div class="container py-4">
 
         <div class="row row-cols-4 g-3">
             @forelse ($movies as $movie)
                 <div class="col">
 
-                    <div class="card h-100">
+                    <div class="card h-100 border-success">
                         <div class="card-body">
                             <p> Title: "{{ $movie->title }}" </p>
                             <p> Original title: "{{ $movie->original_title }}" </p>
