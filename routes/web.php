@@ -15,20 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $comics = config("comics");
-
-    $navLinks = ["characters", "comics", "movies", "tv", "games", "collectibles", "videos", "fans", "news"];
-
-    return view('pages.homepage', compact("comics", "navLinks"));
+    return view('pages.homepage');
 })->name("home");
-
-
-Route::get('/comic{id}', function (string $id) {
-
-    $comics = config("comics");
-    $comic = $comics[$id];
-
-    $navLinks = ["characters", "comics", "movies", "tv", "games", "collectibles", "videos", "fans", "news"];
-
-    return view('pages.show', compact("comic", "comics", "navLinks"));
-})->name("comic.show");
